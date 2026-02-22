@@ -1,24 +1,31 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom";
+import AuthProvider from "./context/AuthProvider.jsx";
+import PrivateRoute from "./routes/PrivateRoute";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
-import PrivateRoute from "./routes/PrivateRoute";
 
-function App(){
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function App(){
   return(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        
-        <Route path="/" element={
-          <PrivateRoute>
-            <Home/>
-          </PrivateRoute>
-        }/>
-      </Routes>
-    </BrowserRouter>
-  )
-}
+    <AuthProvider>
+      <BrowserRouter>
+        <ToastContainer position="top-center" />
 
-export default App;
+        <Routes>
+          <Route path="/" element={
+            <PrivateRoute>
+              <Home/>
+            </PrivateRoute>
+          }/>
+
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
+        </Routes>
+
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
