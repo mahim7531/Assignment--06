@@ -1,9 +1,9 @@
-# Assignment : (Write the assignment number)
+# Assignment : [ Firebase Authentication System (React + Firebase)]
 
-### Name : (Write your name)
+### Name : Md Tayam Hasan Mahim
 
-### Email : (The Gmail address you used to purchase the course)
+### Email : mdtayamhasanmahim7531@gmail.com
 
-[Live deployment link](Provide your assignment Live deployment link)
+[Live deployment link:https://firebase-authentication-system-255258.netlify.app/login
 
 [overview video link](Provide your assignment overview video link)
